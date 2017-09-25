@@ -1,0 +1,171 @@
+.shopcar-wrapper
+	display: flex
+	flex-wrap: wrap
+	position: fixed
+	bottom: 0
+	left: 0
+	z-index: 3
+	width: 100%
+	height: 44px
+	line-height: 44px
+	color: #919396
+
+.shopcar-info
+	flex: auto
+	background-color: #141d27
+	
+.shopping
+	width: 58px
+	height: 58px
+	border-radius: 100%
+	display: inline-block
+	position: relative
+	top: -16px
+	z-index: 5
+	text-align: center
+	margin-left: 18px
+
+.shopping-default
+	background-color: rgba(43,52,60,0.8)
+	color: #80858a
+	
+.shopping-active
+	background-color: rgba(0,160,220,0.8)
+	color: white
+
+i.icon-shopping_cart
+	font-size: 24px
+	line-height: 58px
+
+.foodCount
+	position: absolute
+	right: -4px
+	top: -2px
+	font-size: 12px
+	background-color: #f01414
+	color: white
+	height: 24px
+	line-height: 24px
+	width: 24px
+	border-radius: 100%
+	
+.total-price
+	display: inline-block
+	font-size: 16px
+	vertical-align: top
+	margin-left: 14px
+	&.total-price-active
+		color: white
+
+.send-price
+	margin-left: 14px
+	vertical-align: top
+	border-left: #919396 solid 1px
+	padding-left: 12px
+
+.from-price
+	flex: 0 0 105px
+	width: 105px
+	background-color: #2b333b
+	text-align: center
+	font-weight: bold
+
+.gopay
+	background-color: #00a0dc
+	color: white
+	display: block
+	&:hover
+		color: white
+
+.shopcar-detail
+	flex-basis: 100%
+	width: 100%
+	overflow: hidden
+	position: absolute
+	left: 0
+	z-index: 2
+	
+.shopcar-header
+	background-color: #f3f5f7
+	border-bottom: #ccc solid 1px
+	line-height: 40px
+	display: flex
+	position: relative
+	z-index: 3
+
+.shopcars-area
+	position: relative
+	z-index: 2
+	max-height: 180px
+	background-color: white
+	
+.shopcar-title
+	display: inline-block
+	margin-left: 18px
+	flex: auto
+	font-size: 14px
+
+.shopcar-clear
+	flex: 0 0 60pz
+	width: 60px
+	margin-right: 18px
+	background: none
+	border: none
+	color: #00a0dc
+
+.shopcars-item
+	display: flex
+	margin-left: 18px
+	border-bottom: #ccc solid 1px
+	height: 44px
+	overflow: hidden
+
+.food-title
+	flex: auto
+	font-size: 14px
+	
+.food-totalprice
+	flex: 0 0 26px
+	color: #f01414
+	
+.carcontrol.shopcar-tpl
+	flex: 0 0 100px
+	text-align: center
+	margin-top: 10px
+	line-height: 24px
+	
+.bounce-enter-active
+	transition: all 0.6s ease
+
+.bounce-leave-active
+	transition: all 0.6s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+	
+.bounce-enter, .bounce-leave-to
+	left: -2000px
+	
+.food-enter-active
+	transition: all 0.6s ease
+
+.food-leave-active
+	transition: all 0.6s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+	
+.food-enter, .food-leave-to
+	height: 0	
+	
+.bglayer
+	position: fixed
+	top: 0
+	left: 0
+	z-index: -1
+	width: 100%
+	height: 100%
+	background-color: rgba(0,0,0,0.8)
+	
+.bglayer-enter-active
+	transition: opacity 0.5s ease
+
+.bglayer-leave-active
+	transition: opacity 0.5s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+	
+.bglayer-enter, .bglayer-leave-to
+	opacity: 0	
