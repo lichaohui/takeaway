@@ -57,17 +57,6 @@ export default {
 		toggleShopcar() {
 			if(this.calCount > 0 ) {
 				this.isShopcarShow = !this.isShopcarShow
-				if(this.isShopcarShow == true){
-					if(this.shopcarScroll){
-						this.shopcarScroll.refresh()
-					}else{
-						this.$nextTick(()=>{
-							this.shopcarScroll=new bScroll(this.$refs.shopcars,{
-								click: true
-							})
-						})
-					}
-				}
 			}
 		},
 		hiddenShopcar() {

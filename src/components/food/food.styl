@@ -1,15 +1,12 @@
 .fooder
-	position: relative
-	top: -168px
+	position: fixed
+	top: 0
 	left: 0
-	bottom: 48px
+	bottom: 44px
 	z-index: 3
 	width: 100%
-	overflow: hidden
+	overflow-x: hidden
 	background-color: #f3f5f7
-	
-.fooder-content
-	position: relative
 	
 .fooder-enter-active
 	transition: all 0.5s ease
@@ -75,19 +72,21 @@
 .fooder-price-old
 	text-decoration: line-through
 	
-.joincar
+.joincar,.joincared
 	float: right
 	margin-right: 18px
 	margin-top: 64px
 	height: 24px
 	color: white
 	font-size: 14px
-	background-color: #00a0dc
 	border: none
 	padding-left: 12px
 	padding-right: 12px
 	border-radius: 8px
 
+.joincar
+	background-color: #00a0dc
+	
 .fooder-intro,.fooder-assess
 	margin-top: 16px
 	padding: 16px
@@ -102,22 +101,3 @@
 .fooder-intro-para
 	line-height: 20px
 	color: #93999f
-
-.fooder-assess-types
-	margin-top: 6px
-	border-bottom: #ccc solid 1px
-	padding-bottom: 12px
-	
-.fooder-assess-type
-	display: inline-block
-	margin-right: 6px
-	
-.chosetype
-	padding-left: 8px
-	padding-right: 8px
-	border: none
-	height: 32px
-	
-.chosetype-selected
-	background-color: #00a0dc
-	color: white

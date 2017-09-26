@@ -111,6 +111,14 @@ export default {
 			let scrollY
 			index == 0 ? scrollY = 0 : scrollY = this.goodHeights[index-1]
 			this.goodScroll.scrollTo(0,-scrollY,1000)
-		}
-	},
+		},
+		//险种food的方法
+		choseFood (food) {
+		  this.selectedFood = food
+			this.isFoodShow = !this.isFoodShow
+		},
+		fooderChange (val) {
+      this.isFoodShow = val
+    }
+	}
 }

@@ -13,11 +13,9 @@
 					<h3 class='good-name'>{{ good.name }}</h3>
 					<ul class='foods'>
 						<li v-for='(food , foodIndex) in good.foods' class='food'>
-						  <router-link v-bind:to="{ path: '/food', query: { goodIndex: goodIndex, foodIndex: foodIndex }}" >
-								<img v-bind:src='food.icon' class='food-icon' width='57' height='57'>
-							</router-link>	
+							<img v-bind:src='food.icon' class='food-icon' width='57' height='57' v-on:click='choseFood(food)'>
 							<section class='food-detail'>
-								<h4 class='food-name' v-on:click='goFood(food)'>{{ food.name }}</h4>
+								<h4 class='food-name' v-on:click='choseFood(food)'>{{ food.name }}</h4>
 								<p class='food-description'>{{ food.description }}</p>
 								<dl class='food-info'>
 									<dt>月售</dt>
@@ -38,6 +36,7 @@
 				</li>
 			</ul>
 		</div>
+		<food v-bind:food='selectedFood' v-show='isFoodShow' v-on:fooder-change="fooderChange"></food>
 		<shopcar v-bind:businessmen="businessmen" v-bind:selectedFoods='calFoods'></shopcar>
 	</main>
 </template>

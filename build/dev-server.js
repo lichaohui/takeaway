@@ -56,15 +56,6 @@ router.get('/goods',(req,res)=>{
 	})
 })
 
-//展示商品详情的路由
-router.get('/food',(req,res)=>{
-	let goods=appdata.goods
-	res.json({
-		isSuccess: true,
-		data: goods[req.query.goodIndex].foods[req.query.foodIndex]
-	})
-})
-
 //获取商家数据的路由
 router.get('/ratings',(req,res)=>{
 	//评论数据
