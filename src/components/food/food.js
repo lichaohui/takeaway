@@ -11,6 +11,11 @@ export default {
 			type: String
 		}
   },
+	data() {
+		return {
+			showType: 'all'
+		}
+	},
 	components: {
 		carbutton,
 		assess
@@ -18,6 +23,9 @@ export default {
 	methods: {
 		hideFooder() {
 			this.$emit('fooder-change', false)
+		},
+		changeType(type) {
+			this.showType = type
 		}
 	}
 }

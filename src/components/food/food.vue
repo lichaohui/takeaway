@@ -23,7 +23,17 @@
 					<h3 class='fooder-intro-title'>商品介绍</h3>
 					<p class='fooder-intro-para'>{{ food.info }}</p>
 				</div>
-				<assess></assess>
+				<div class='fooder-assess'>
+				  <h3 class='fooder-intro-title'>商品评价</h3>
+					<assess v-bind:ratings='food.ratings' v-bind:showType='showType' v-on:change-type='changeType'></assess>
+					<ul class='assess-list'>
+						<li class='assess-item' v-for='rating in food.ratings' v-show='showType == "all" || showType == rating.rateType'>
+							<time class='assess-time'>{{ rating.rateTime }}</time>
+							<span class='customer'>{{ rating.username }}<img v-bind:src='rating.avatar' class='assess-avatar' width='20'></span>
+							<p class='assess-para'><i v-bind:class="rating.rateType == 'good' ? 'icon-thumb_up' : 'icon-thumb_down' "></i>{{ rating.text }}</p>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</transition> 
