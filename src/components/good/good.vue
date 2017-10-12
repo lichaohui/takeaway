@@ -1,5 +1,5 @@
 <template>
-  <main class='main'>
+  <main class='main main-good'>
     <aside class='side-nav' ref="sidenav">
 		  <ul class='side-navbar'>
 			  <li v-for='(good , index) in goods' class='side-navbar-item' v-bind:class="[good.type, {'cur':index == currentIndex }]" v-on:click='choseGood(index)'>

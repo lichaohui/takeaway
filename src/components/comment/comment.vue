@@ -23,7 +23,26 @@
 				<dd class='score-star-dd delivery-time'>{{ businessmen.deliveryTime }}分钟</dd>
 			</dl>
 		</div>
-		<assess v-bind:ratings='ratings' v-bind:showType='showType' v-on:change-type='changeType'></assess>
+		<div class='comment-area'>
+		  <assess v-bind:ratings='ratings' v-bind:showType='showType' v-on:change-type='changeType'></assess>
+			<div class='comment-wrapper' ref='rating'>
+			  <ul class='comments'>
+					<li class='comment' v-show='showType == "all" || showType == rating.rateType' v-for='rating in ratings'>
+						<img v-bind:src='rating.avatar' class='customer-avatar' width='34' height='34'>
+						<section class='comment-info'>
+							<h4 class='customer-name'>{{ rating.username }}</h4>
+							<time class='comment-created-at'>{{ rating.rateTime }}</time>
+							<star v-bind:size='24' v-bind:score='rating.score'></star>
+							<em v-show='rating.deliveryTime' class='costomer-delivery'>{{ rating.deliveryTime }}分钟送达</em>
+							<p class='comment-para'>{{ rating.text }}</p>
+							<ul class='recommends' v-show='rating.recommend.length > 0' v-bind:class='rating.rateType == "good" ? "icon-thumb_up" : "icon-thumb_down"'>
+								<li v-for='recommend in rating.recommend' class='recommend'>{{ recommend }}</li>
+							</ul>
+						</section>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</main>
 </template>
 

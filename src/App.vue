@@ -67,8 +67,8 @@
  .navbar	
    display: flex
 	  width: 100%
-	  height: 40px
-	  line-height: 40px
+	  height: 34px
+	  line-height: 34px
 		 text-align: center
 		 borders(solid,#ccc,1px)
 		 	 

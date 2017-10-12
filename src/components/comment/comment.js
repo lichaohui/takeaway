@@ -1,5 +1,5 @@
-import star from '../star/star.vue'
-import assess from '../assess/assess.vue'
+import star from '@/components/star/star.vue'
+import assess from '@/components/assess/assess.vue'
 
 export default {
 	props: {
@@ -25,12 +25,9 @@ export default {
 				 * 则把返回的数据赋值给当前实例的businessmen属性
 				 */
 				this.ratings = res.body.data
-				/*this.$nextTick(()=>{
-					//调用_initScroll方法初始化页面滚动
-				  this._initScroll()
-					//计算每个商品区块的高度
-					this._calcuHeight()
-				})*/
+				this.$nextTick(()=>{
+					this.$refs.rating.style.height = window.innerHeight-327 + 'px'
+				})
 			} else {
 			   // 如果请求成功但并没有返回对应数据则提示返回的信息
 			   alert(res.body.message)
