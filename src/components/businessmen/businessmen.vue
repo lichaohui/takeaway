@@ -9,8 +9,8 @@
 					<em class='sell-count'>月售{{ businessmen.sellCount }}单</em>
 				</section>
 				<section class='collect-area'>
-				  <i class='collect collect-after icon-favorite'></i>
-					已收藏
+				  <i class='collect icon-favorite' v-bind:class='isCollected ? "collect-after" : "collect-before"' v-on:click='toggleCollect()'></i>
+					{{ calCollectText }}
 				</section>
 			</div>
 			<div class='businessmen-info-others'>
@@ -44,12 +44,16 @@
 		<div class='businessmen-view'>
 		  <h3 class='businessmen-bulletin-title'>商家实景</h3>
 			<div class='view-wrapper'>
-			  <ul class='views' ref='views' style='width: calViews'>
+			  <ul class='views' ref='views'>
 				  <li class='view' v-for='view in businessmen.pics'>
 					  <img v-bind:src='view'>
 					</li>
 				</ul>
 			</div>
+		</div>
+		<div class='businessmen-intro'>
+		  <h3 class='businessmen-bulletin-title'>商家信息</h3>
+			<p class='businessmen-intro-para' v-for='info in businessmen.infos'>{{ info }}</p>
 		</div>
 	</main>
 </template>

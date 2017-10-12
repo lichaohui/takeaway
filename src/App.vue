@@ -22,10 +22,16 @@
 
 <script>
  import header from './components/header/header.vue'
+ import {getRequest} from '../static/js/getRequest.js'
  export default {
    data () {
 	   return {
-		   businessmen: {}
+		   businessmen: {
+			   id: (() => {
+				   let queryParam = getRequest()
+					 return queryParam.id
+				 })()
+			 }
 		 }
 	 },
 	 /*
@@ -39,7 +45,7 @@
 		  * 通过vue-resource这个插件发送ajax请求
 			* /api/seller是后端路由
 			*/
-	   this.$http.get('/api/seller').then((res) => {
+	   this.$http.get(`/api/seller?id=${this.businessmen.id}`).then((res) => {
 		   if (res.body.isSuccess) {
 			   /*
 				  * 如果请求成功并且返回数据成功
