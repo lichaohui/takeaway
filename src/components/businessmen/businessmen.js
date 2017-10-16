@@ -8,7 +8,7 @@ export default {
   },
 	data () {
 		return {
-			isCollected : false
+			isCollected : JSON.parse(window.localStorage.isCollecteds)[`businessmen${this.businessmen.id}`]
 		}
 	},
   components: {
@@ -42,6 +42,15 @@ export default {
 	methods: {
 		toggleCollect() {
 			this.isCollected = !this.isCollected
+			let bid = this.businessmen.id
+			let _isCollecteds
+			if(window.localStorage.isCollecteds){
+				_isCollecteds = JSON.parse(window.localStorage.isCollecteds)
+			}else{
+				_isCollecteds = {}
+			}
+			_isCollecteds[`businessmen${bid}`] = this.isCollected
+			window.localStorage.isCollecteds = JSON.stringify(_isCollecteds)
 		}
 	}
 }

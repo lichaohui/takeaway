@@ -16,7 +16,9 @@
 		</nav>
 		<!-- 路由出口 -->
     <!-- 路由匹配到的组件将渲染在这里 -->
-    <router-view v-bind:businessmen="businessmen"></router-view>
+		<keep-alive>
+      <router-view v-bind:businessmen="businessmen"></router-view>
+		</keep-alive>
   </div>
 </template>
 
@@ -51,7 +53,7 @@
 				  * 如果请求成功并且返回数据成功
 					* 则把返回的数据赋值给当前实例的businessmen属性
 					*/
-				 this.businessmen = res.body.data
+				 this.businessmen = Object.assign({}, this.businessmen, res.body.data)
 			 } else {
 			   // 如果请求成功但并没有返回对应数据则提示返回的信息
 			   alert(res.body.message)
